@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulateur d&#x27;Impact Écologique des Itinéraires de Voyage | Votre Empreinte Carbone de Voyage, Simplifiée.</title>
+    <meta name="description" content="Calculez l">
+    <style>
+        :root {
+            --color-primary: #4CAF50;
+            --color-secondary: #8BC34A;
+            --color-text: #333;
+            --color-background: #F0F4C3;
+            --color-surface: #FFFFFF;
+            --color-border: #E0E0E0;
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --spacing-unit: 1rem;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--color-background);
+            color: var(--color-text);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--color-primary);
+            color: white;
+            padding: calc(2 * var(--spacing-unit)) 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: var(--spacing-unit);
+            flex-grow: 1;
+        }
+
+        .hero {
+            text-align: center;
+            padding: calc(3 * var(--spacing-unit)) 0;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            color: white;
+            border-radius: 8px;
+            margin-bottom: calc(2 * var(--spacing-unit));
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: var(--spacing-unit);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .tool-section {
+            background-color: var(--color-surface);
+            padding: calc(2 * var(--spacing-unit));
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: calc(2 * var(--spacing-unit));
+        }
+
+        .tool-section h3 {
+            color: var(--color-primary);
+            text-align: center;
+            margin-bottom: calc(2 * var(--spacing-unit));
+            font-size: 1.8rem;
+        }
+
+        #tool-form {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: calc(1.5 * var(--spacing-unit));
+            padding-bottom: calc(2 * var(--spacing-unit));
+            border-bottom: 1px solid var(--color-border);
+            margin-bottom: calc(2 * var(--spacing-unit));
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: var(--color-text);
+        }
+
+        input[type="number"],
+        select {
+            padding: 0.8rem;
+            border: 1px solid var(--color-border);
+            border-radius: 4px;
+            font-size: 1rem;
+            background-color: #f9f9f9;
+        }
+
+        input[type="number"]:focus,
+        select:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+        }
+
+        #tool-submit {
+            grid-column: 1 / -1;
+            padding: 1rem 2rem;
+            background-color: var(--color-primary);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            justify-self: center;
+            margin-top: var(--spacing-unit);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        #tool-submit:hover {
+            background-color: #66BB6A;
+            transform: translateY(-2px);
+        }
+
+        #tool-result {
+            padding: calc(1.5 * var(--spacing-unit));
+            background-color: #e8f5e9; /* Light green for results */
+            border-radius: 8px;
+            border: 1px solid var(--color-secondary);
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--color-text);
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 10px;
+        }
+        #tool-result p {
+            margin: 0;
+        }
+        #tool-result strong {
+            color: var(--color-primary);
+            font-size: 1.4rem;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: calc(3 * var(--spacing-unit)) 0;
+            margin-top: calc(3 * var(--spacing-unit));
+            background-color: var(--color-surface);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .cta-section h3 {
+            color: var(--color-primary);
+            font-size: 1.8rem;
+            margin-bottom: var(--spacing-unit);
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: calc(2 * var(--spacing-unit));
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--color-secondary);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            background-color: #9CCC65;
+            transform: translateY(-2px);
+        }
+
+        .seo-section {
+            background-color: #e0e0e0;
+            color: #555;
+            padding: calc(2 * var(--spacing-unit));
+            margin-top: calc(3 * var(--spacing-unit));
+            border-top: 1px solid var(--color-border);
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .seo-section h4 {
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-unit);
+            color: var(--color-primary);
+        }
+
+        .seo-section p {
+            margin-bottom: 0.8rem;
+            line-height: 1.5;
+        }
+
+        .seo-section a {
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+
+        .seo-section a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: var(--color-primary);
+            color: white;
+            text-align: center;
+            padding: var(--spacing-unit) 0;
+            margin-top: calc(2 * var(--spacing-unit));
+        }
+    </style>
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://simulateur-d-impact-ecologique-des-itineraires-ec0b7839.onrender.com">
+    <meta property="og:title" content="Simulateur d&#x27;Impact Écologique des Itinéraires de Voyage">
+    <meta property="og:description" content="Calculez l">
+    <meta property="og:url" content="https://simulateur-d-impact-ecologique-des-itineraires-ec0b7839.onrender.com">
+    <meta property="og:type" content="website">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Simulateur d'Impact Écologique des Itinéraires de Voyage", "description": "Calculez l", "url": "https://simulateur-d-impact-ecologique-des-itineraires-ec0b7839.onrender.com", "applicationCategory": "UtilityApplication", "operatingSystem": "Web Browser"}</script>
+</head>
+<body data-site-slug="simulateur-d-impact-ecologique-des-itineraires-ec0b7839" data-runtime-mode="generic_calculator">
+    <header>
+        <div class="container">
+            <h1>Voyagez Malin, Voyagez Vert.</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="hero">
+            <h2>Votre Empreinte Carbone de Voyage, Simplifiée.</h2>
+            <p>Découvrez l'impact écologique de vos déplacements en avion, train ou voiture. Comparez et choisissez l'option la plus responsable pour la planète.</p>
+        </section>
+
+        <section class="tool-section">
+            <h3>Calculez Votre Impact</h3>
+            <form id="tool-form">
+                <div class="form-group">
+                    <label for="distance">Distance parcourue (km) :</label>
+                    <input type="number" id="distance" name="distance" min="1" value="500" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mode">Mode de transport :</label>
+                    <select id="mode" name="mode" required>
+                        <option value="avion">Avion</option>
+                        <option value="train">Train</option>
+                        <option value="voiture_essence">Voiture Essence</option>
+                        <option value="voiture_electrique">Voiture Électrique</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="passengers">Nombre de passagers (pour voiture) :</label>
+                    <input type="number" id="passengers" name="passengers" min="1" value="1" required>
+                </div>
+
+                <button type="submit" id="tool-submit">Calculer l'Empreinte</button>
+            </form>
+
+            <div id="tool-result">
+                <p id="result-detail">Vos résultats apparaîtront ici. Essayez une simulation !</p>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h3>Prêt à faire la différence ?</h3>
+            <p>Chaque geste compte. Explorez des alternatives et engagez-vous pour un tourisme plus durable.</p>
+            <a href="#" class="cta-button" data-affiliate-slot="eco_guide">Découvrir les Voyages Écologiques</a>
+        </section>
+    </div>
+
+    <section class="seo-section">
+        <div class="container">
+            <h4>Optimisez vos voyages avec notre simulateur d'empreinte carbone</h4>
+            <p>Vous cherchez à réduire votre <a href="#" aria-label="Empreinte carbone voyage">empreinte carbone de voyage</a> ? Notre calculateur vous aide à comparer l'impact écologique de différents modes de transport : <a href="#" aria-label="Comparatif avion train voiture CO2">avion, train, voiture</a>. Que vous planifiiez des vacances en <a href="#" aria-label="Voyage durable France">France</a> ou à l'étranger, découvrez comment vos choix influencent l'environnement. Obtenez une estimation précise des <a href="#" aria-label="Émissions CO2 transport">émissions de CO2</a> par kilomètre et par passager. Un outil essentiel pour un <a href="#" aria-label="Tourisme responsable">tourisme responsable</a> et des <a href="#" aria-label="Déplacements écologiques">déplacements plus écologiques</a>.</p>
+            <p>Notre <a href="#" aria-label="Calculateur CO2 voyage">calculateur CO2 voyage</a> est conçu pour sensibiliser et offrir des solutions concrètes pour un <a href="#" aria-label="Voyage bas carbone">voyage bas carbone</a>. Explorez les avantages du <a href="#" aria-label="Impact environnemental train">train</a> face à l'<a href="#" aria-label="Impact environnemental avion">avion</a> et optimisez vos trajets en voiture. Faites le choix d'un <a href="#" aria-label="Itinéraire écologique">itinéraire écologique</a> et participez à la construction d'un futur plus vert.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Solutions Éco-Voyage. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('tool-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const distance = parseFloat(document.getElementById('distance').value);
+            const mode = document.getElementById('mode').value;
+            const passengers = parseFloat(document.getElementById('passengers').value);
+            let carbonFootprint = 0; // en grammes de CO2
+
+            // Coefficients d'émission en g CO2 / km
+            // Sources simplifiées pour l'exemple, peuvent être affinées
+            const coefficients = {
+                avion: 200, // Long-courrier, peut varier fortement
+                train: 6,   // TGV, électrique
+                voiture_essence: 170, // Moyenne européenne, divisé par passagers
+                voiture_electrique: 50 // Production d'électricité et fabrication, divisé par passagers
+            };
+
+            if (isNaN(distance) || distance <= 0) {
+                document.getElementById('tool-result').innerHTML = "<p style='color: red;'>Veuillez entrer une distance valide.</p>";
+                return;
+            }
+
+            switch (mode) {
+                case 'avion':
+                    carbonFootprint = distance * coefficients.avion;
+                    break;
+                case 'train':
+                    carbonFootprint = distance * coefficients.train;
+                    break;
+                case 'voiture_essence':
+                    if (isNaN(passengers) || passengers <= 0) {
+                        document.getElementById('tool-result').innerHTML = "<p style='color: red;'>Veuillez entrer un nombre de passagers valide pour la voiture.</p>";
+                        return;
+                    }
+                    carbonFootprint = (distance * coefficients.voiture_essence) / passengers;
+                    break;
+                case 'voiture_electrique':
+                    if (isNaN(passengers) || passengers <= 0) {
+                        document.getElementById('tool-result').innerHTML = "<p style='color: red;'>Veuillez entrer un nombre de passagers valide pour la voiture.</p>";
+                        return;
+                    }
+                    carbonFootprint = (distance * coefficients.voiture_electrique) / passengers;
+                    break;
+                default:
+                    document.getElementById('tool-result').innerHTML = "<p style='color: red;'>Mode de transport non reconnu.</p>";
+                    return;
+            }
+
+            const carbonKg = (carbonFootprint / 1000).toFixed(2); // Convertir en kg
+
+            let message = "";
+            if (carbonKg < 10) {
+                message = "Excellent ! Votre choix est très respectueux de l'environnement.";
+            } else if (carbonKg < 50) {
+                message = "Bonne initiative ! Il y a toujours des marges d'amélioration.";
+            } else if (carbonKg < 200) {
+                message = "Attention, votre empreinte est significative. Des alternatives existent.";
+            } else {
+                message = "Votre empreinte est élevée. Considérez sérieusement des modes de transport plus durables.";
+            }
+
+
+            document.getElementById('tool-result').innerHTML =
+                `<p>Votre empreinte carbone estimée pour ce trajet est de :</p>
+                 <p><strong>${carbonKg} kg de CO2</strong></p>
+                 <p>${message}</p>`;
+        });
+    </script>
+<div id="qa-smoke-result" hidden></div>
+<script id="farmbuilder-affiliate-helper">
+(function () {
+  window.__UTILITY_AFFILIATE_MAP = window.__UTILITY_AFFILIATE_MAP || {};
+  document.addEventListener("click", function (event) {
+    const target = event.target.closest("[data-affiliate-slot]");
+    if (!target) return;
+    const slot = target.getAttribute("data-affiliate-slot");
+    const href = window.__UTILITY_AFFILIATE_MAP[slot];
+    if (!href) return;
+    if (target.tagName && target.tagName.toLowerCase() === "a") {
+      target.setAttribute("href", href);
+      target.setAttribute("rel", "nofollow sponsored noopener noreferrer");
+      return;
+    }
+    event.preventDefault();
+    window.open(href, "_blank", "noopener");
+  }, true);
+})();
+</script>
+<script id="farmbuilder-functional-qa">
+(function () {
+  function marker() {
+    let node = document.getElementById("qa-smoke-result");
+    if (node) return node;
+    node = document.createElement("div");
+    node.id = "qa-smoke-result";
+    node.hidden = true;
+    document.body.appendChild(node);
+    return node;
+  }
+
+  let qaFinished = false;
+  let qaWatchdog = null;
+
+  function normalize(text) {
+    return String(text || "").replace(/\s+/g, " ").trim();
+  }
+
+  function findForm() {
+    return document.getElementById("tool-form") || document.querySelector("form");
+  }
+
+  function findResult() {
+    return (
+      document.getElementById("tool-result") ||
+      document.querySelector("[data-result]") ||
+      document.querySelector(".tool-result, .result-card, .result, .results, .output, .preview, .diagnostic, .analysis")
+    );
+  }
+
+  function primaryAction(form) {
+    if (!form) return null;
+    return (
+      document.getElementById("tool-submit") ||
+      form.querySelector("#tool-submit") ||
+      form.querySelector("[data-primary-action]") ||
+      form.querySelector("button[type=submit]") ||
+      form.querySelector("button") ||
+      form.querySelector("input[type=submit]")
+    );
+  }
+
+  function resultSignature(node) {
+    if (!node) return "";
+    const text = normalize(node.textContent);
+    const html = normalize(node.innerHTML).slice(0, 600);
+    return `${text}||${html}`;
+  }
+
+  function resultHeadline(node) {
+    if (!node) return "";
+    const heading = node.querySelector("h1, h2, h3, strong, b");
+    return normalize(heading ? heading.textContent : "");
+  }
+
+  function sampleText(field) {
+    const key = `${field.id || ""} ${field.name || ""} ${field.placeholder || ""}`.toLowerCase();
+    if (/email/.test(key)) return "bonjour@example.com";
+    if (/url|site|website|lien/.test(key)) return "https://example.com/offre-solaire";
+    if (/phone|tel|mobile/.test(key)) return "0612345678";
+    if (/ville|city|localisation|location|region|departement|postal/.test(key)) return "Paris";
+    if (/orientation/.test(key)) return "sud";
+    if (/keyword|theme|topic|sujet|subject/.test(key)) return "energie solaire domestique";
+    if (/titre|title/.test(key)) return "Simulateur solaire maison";
+    if (/nom|name|project/.test(key)) return "Projet Horizon";
+    if (/description|notes|content|message/.test(key)) return "Maison individuelle exposee sud avec toiture exploitable.";
+    return field.placeholder || "France";
+  }
+
+  function sampleNumber(field) {
+    const key = `${field.id || ""} ${field.name || ""}`.toLowerCase();
+    if (/inclinaison|angle|slope/.test(key)) return "30";
+    if (/surface|size|m2|sqm/.test(key)) return "28";
+    if (/annee|year/.test(key)) return "2024";
+    if (/prix|price|budget|cost|amount|montant/.test(key)) return "12000";
+    const min = Number(field.min || "");
+    const max = Number(field.max || "");
+    if (Number.isFinite(min) && Number.isFinite(max) && max >= min) {
+      return String(Math.min(max, Math.max(min, min + Math.round((max - min) * 0.35))));
+    }
+    if (Number.isFinite(min)) return String(Math.max(min, 12));
+    if (Number.isFinite(max)) return String(Math.min(max, 12));
+    return field.value || "12";
+  }
+
+  function applySample(field) {
+    const tag = (field.tagName || "").toLowerCase();
+    const type = (field.type || "").toLowerCase();
+    if (field.disabled) return;
+    if (type === "hidden" || type === "submit" || type === "button" || type === "reset" || type === "image" || type === "file") {
+      return;
+    }
+    if (tag === "select") {
+      const option = Array.from(field.options || []).find((item) => item.value && !item.disabled) || field.options[0];
+      if (option) field.value = option.value;
+      return;
+    }
+    if (type === "checkbox") {
+      field.checked = true;
+      return;
+    }
+    if (type === "radio") {
+      field.checked = true;
+      return;
+    }
+    if (type === "date") {
+      field.value = "2026-03-01";
+      return;
+    }
+    if (type === "email") {
+      field.value = "bonjour@example.com";
+      return;
+    }
+    if (type === "url") {
+      field.value = "https://example.com/offre-solaire";
+      return;
+    }
+    if (type === "tel") {
+      field.value = "0612345678";
+      return;
+    }
+    if (type === "color") {
+      field.value = "#2f855a";
+      return;
+    }
+    if (type === "number" || type === "range") {
+      field.value = sampleNumber(field);
+      return;
+    }
+    field.value = sampleText(field);
+  }
+
+  function stamp(status, detail, headline, primary) {
+    if (qaFinished) return;
+    qaFinished = true;
+    if (qaWatchdog) {
+      window.clearTimeout(qaWatchdog);
+      qaWatchdog = null;
+    }
+    const node = marker();
+    node.dataset.status = status;
+    node.dataset.mode = "native-form";
+    node.dataset.detail = detail || "";
+    node.dataset.headline = headline || "";
+    node.dataset.primary = primary || "";
+    node.dataset.viewport = window.innerWidth <= 640 ? "mobile" : "desktop";
+    window.setTimeout(function () {
+      try {
+        window.stop();
+      } catch (_error) {}
+    }, 0);
+  }
+
+  function installModalGuards() {
+    const noop = function () {};
+    const approve = function () { return true; };
+    const empty = function () { return ""; };
+    try { window.alert = noop; } catch (_error) {}
+    try { window.confirm = approve; } catch (_error) {}
+    try { window.prompt = empty; } catch (_error) {}
+  }
+
+  function triggerAction(form, action) {
+    try {
+      if (typeof form.requestSubmit === "function") {
+        form.requestSubmit(action || undefined);
+        return;
+      }
+    } catch (_error) {}
+    if (action && typeof action.click === "function") {
+      action.click();
+      return;
+    }
+    form.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
+  }
+
+  function inspectResult(before, attemptsLeft) {
+    const result = findResult();
+    if (!result) {
+      stamp("fail", "La zone de resultat est introuvable.", "");
+      return;
+    }
+    const after = resultSignature(result);
+    const text = normalize(result.textContent);
+    if (after && after !== before && text.length >= 24) {
+      const primary = result.querySelector("a[href], button[data-href], [data-primary-url]") || document.querySelector("#tool-result a[href]");
+      stamp("pass", "Le formulaire natif a mis a jour la zone de resultat.", resultHeadline(result), primary ? (primary.getAttribute("href") || primary.getAttribute("data-primary-url") || "") : "");
+      return;
+    }
+    if (attemptsLeft > 0) {
+      window.setTimeout(function () {
+        inspectResult(before, attemptsLeft - 1);
+      }, 250);
+      return;
+    }
+    stamp("fail", "La zone de resultat n'a pas renvoye de contenu exploitable.", resultHeadline(result));
+  }
+
+  function runSmoke() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("__qa") !== "functional") return;
+    qaWatchdog = window.setTimeout(function () {
+      stamp("fail", "QA smoke timed out before the page reported a usable result.", "");
+    }, 7000);
+    const form = findForm();
+    if (!form) {
+      stamp("fail", "Le formulaire principal est introuvable.", "");
+      return;
+    }
+    const result = findResult();
+    const before = resultSignature(result);
+    installModalGuards();
+    try {
+      form.querySelectorAll("input, select, textarea").forEach(applySample);
+    } catch (error) {
+      stamp("fail", error && error.message ? `QA smoke sample failed: ${error.message}` : "QA smoke sample failed before submit.", "");
+      return;
+    }
+    const action = primaryAction(form);
+    try {
+      triggerAction(form, action);
+    } catch (error) {
+      stamp("fail", error && error.message ? `QA smoke submit failed: ${error.message}` : "QA smoke submit failed.", "");
+      return;
+    }
+    inspectResult(before, 10);
+  }
+
+  window.addEventListener("error", function (event) {
+    const message = event && event.message ? event.message : "JavaScript runtime error during QA smoke.";
+    stamp("fail", `QA smoke JS error: ${message}`, "");
+  }, { once: true });
+
+  window.addEventListener("unhandledrejection", function (event) {
+    const reason = event && event.reason;
+    const detail = typeof reason === "string"
+      ? reason
+      : reason && reason.message
+        ? reason.message
+        : "Unhandled promise rejection during QA smoke.";
+    stamp("fail", `QA smoke rejection: ${detail}`, "");
+  }, { once: true });
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", function () {
+      window.setTimeout(runSmoke, 60);
+    }, { once: true });
+  } else {
+    window.setTimeout(runSmoke, 60);
+  }
+})();
+</script>
+</body>
+</html>
