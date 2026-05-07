@@ -1,29 +1,44 @@
 {
-  "run_id": "run-1776039696223",
-  "job_index": 2,
+  "run_id": "run-1778154749469",
+  "job_index": 1,
   "params": {
     "owner_user_id": "user-1774822953462",
     "owner_username": "admin",
     "owner_display_name": "Administrator",
-    "count": 3,
+    "count": 1,
     "archetype": "calculator",
-    "market": "France",
+    "market": "Growth republish",
     "language": "fr",
     "country": "FR",
-    "brief": "Un calculateur ludique pour inciter à des choix de voyage plus durables et responsables.",
-    "notes": "Calculez l'empreinte carbone de vos déplacements (avion, train, voiture) et comparez différentes options pour choisir le voyage le plus écologique.\nCentré sur le calcul de l'impact carbone. L'aspect visuel est optimiste et environnemental.",
-    "import_notes": "",
-    "growth_job_id": "",
-    "growth_slug": "",
-    "growth_kind": "",
+    "brief": "Calculez l",
+    "notes": "Growth module republish of an updated local artifact.",
+    "import_notes": "Growth module republish of an updated local artifact.",
+    "growth_job_id": "growth-1778154698063",
+    "growth_slug": "simulateur-d-impact-ecologique-des-itineraires-ec0b7839",
+    "growth_kind": "affiliate",
+    "dashboard_mode": "builder",
+    "network_site_format": "forum",
+    "network_primary_topic": "",
+    "network_primary_geo": "",
+    "network_domain_pool": "forum-de-jeu.shop",
+    "network_hosting_pool": "4vps:netoper | server_id=447345 | ip=5.253.59.18 | ssh_user=root | ssh_port=22",
+    "network_dns_strategy": "auto_pool_assign",
+    "network_domain_flow": "manual",
+    "network_content_strategy": "",
+    "network_model_concept": "google/gemini-2.5-flash-lite:nitro",
+    "network_model_seo": "google/gemini-2.5-flash-lite:nitro",
+    "network_model_build": "google/gemini-2.5-flash",
+    "network_model_qa": "anthropic/claude-haiku-4.5",
+    "network_model_growth": "google/gemini-2.5-flash-lite:nitro",
+    "network_blueprint_id": "",
     "mode": "production",
-    "run_kind": "generated_batch",
+    "run_kind": "import_deploy",
     "publish_target": "render",
     "requested_publish_target": "render",
     "railway_project_id_override": "",
     "railway_environment_id_override": "",
-    "railway_service_id_override": "",
-    "railway_service_name_override": "",
+    "railway_service_id_override": "srv-d7e3fqjbc2fs73eblujg",
+    "railway_service_name_override": "simulateur-d-impact-ecologique-des-itineraires-ec0b7839",
     "github_repo_private": true,
     "stage_models": {
       "ideation": "google/gemini-2.5-flash-lite:nitro",
@@ -32,255 +47,33 @@
       "qa": "anthropic/claude-haiku-4.5",
       "escalation": "anthropic/claude-sonnet-4.6"
     },
-    "archetype_display": "mixed batch",
+    "archetype_display": "file deploy",
     "archetype_mix": [
-      "tool",
-      "calculator",
-      "generator"
+      "imported"
     ],
-    "forced_design_theme": "solarpunk-signal",
-    "forced_structure_preset": "split-command",
+    "forced_slug": "simulateur-d-impact-ecologique-des-itineraires-ec0b7839",
     "site_idea_title": "Simulateur d'Impact Écologique des Itinéraires de Voyage",
-    "site_idea_summary": "Calculez l'empreinte carbone de vos déplacements (avion, train, voiture) et comparez différentes options pour choisir le voyage le plus écologique."
+    "site_idea_summary": "Calculez l",
+    "import_source_path": "/var/lib/utility-site-studio/data/growth-republish/growth-1778154698063/simulateur-d-impact-ecologique-des-itineraires-ec0b7839",
+    "import_root_path": "/var/lib/utility-site-studio/data/growth-republish/growth-1778154698063/simulateur-d-impact-ecologique-des-itineraires-ec0b7839",
+    "import_analysis_model": "preserved-analysis"
   },
-  "site_spec": {
-    "slug": "simulateur-d-impact-ecologique-des-itineraires-ec0b7839",
-    "theme": {
-      "name": "Solarpunk Signal",
-      "slug": "solarpunk-signal",
-      "eyebrow": "Bright Optimism",
-      "family": "solarpunk-signal",
-      "moods": [
-        "optimistic",
-        "green",
-        "smart",
-        "uplifting"
-      ],
-      "archetypes": [
-        "tool",
-        "calculator",
-        "generator"
-      ],
-      "niches": [
-        "eco tools",
-        "mobility",
-        "energy",
-        "wellness",
-        "consumer utility"
-      ],
-      "keywords": [
-        "solar",
-        "green",
-        "future",
-        "optimism",
-        "energy"
-      ],
-      "token_index": [
-        "bright",
-        "calculator",
-        "consumer",
-        "eco",
-        "energy",
-        "future",
-        "generator",
-        "green",
-        "mobility",
-        "optimism",
-        "optimistic",
-        "signal",
-        "smart",
-        "solar",
-        "solarpunk",
-        "tool",
-        "tools",
-        "uplifting",
-        "utility",
-        "wellness"
-      ],
-      "font_embed": "https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap",
-      "display_font": "\"Sora\", sans-serif",
-      "body_font": "\"Inter\", sans-serif",
-      "layout": "split",
-      "card_style": "glass",
-      "button_style": "gradient",
-      "decor_style": "orbs",
-      "hero_template": "1.08fr 0.92fr",
-      "seo_template": "1.18fr 0.82fr",
-      "feature_columns": 3,
-      "faq_columns": 3,
-      "hero_min_height": "78vh",
-      "panel_radius": "28px",
-      "card_radius": "26px",
-      "chip_radius": "999px",
-      "button_radius": "18px",
-      "outline_width": "1px",
-      "backdrop_blur": "22px",
-      "palette": {
-        "bg": "linear-gradient(150deg, #052e16 0%, #15803d 38%, #fde68a 100%)",
-        "surface": "rgba(5, 46, 22, 0.72)",
-        "surface_border": "rgba(253,224,71,0.18)",
-        "text": "#f0fdf4",
-        "muted": "#d1fae5",
-        "accent": "#fde047",
-        "accent_alt": "#86efac",
-        "hero_glow": "rgba(253, 224, 71, 0.18)",
-        "button_text": "#2a2104",
-        "panel_alt": "rgba(255,255,255,0.05)",
-        "shadow": "0 28px 92px rgba(3, 18, 9, 0.34)",
-        "input_fill": "rgba(255,255,255,0.05)"
-      }
-    },
-    "structure": {
-      "name": "Split Command",
-      "slug": "split-command",
-      "hero_variant": "split",
-      "proof_variant": "metrics",
-      "section_order": [
-        "features",
-        "proof",
-        "faq",
-        "seo"
-      ],
-      "feature_columns": 3,
-      "faq_columns": 3,
-      "family": "hero-first",
-      "moods": [
-        "clean",
-        "balanced",
-        "conversion"
-      ],
-      "archetypes": [
-        "tool",
-        "calculator",
-        "generator"
-      ],
-      "niches": [
-        "general utility",
-        "comparison",
-        "services"
-      ],
-      "keywords": [
-        "hero",
-        "conversion",
-        "balanced",
-        "operator"
-      ],
-      "token_index": [
-        "balanced",
-        "calculator",
-        "clean",
-        "command",
-        "comparison",
-        "conversion",
-        "faq",
-        "features",
-        "first",
-        "general",
-        "generator",
-        "hero",
-        "metrics",
-        "operator",
-        "proof",
-        "seo",
-        "services",
-        "split",
-        "tool",
-        "utility"
-      ]
-    },
-    "render_direction": "campaign-slab",
-    "render_direction_name": "Campaign Slab",
-    "page_blueprint": "campaign-mosaic",
-    "page_blueprint_name": "Campaign Mosaic",
+  "import_analysis": {
     "title": "Simulateur d'Impact Écologique des Itinéraires de Voyage",
-    "tagline": "Votre Empreinte Carbone de Voyage, Simplifiée.",
     "description": "Calculez l",
-    "feature_prefix": "Bloc",
-    "action": "Utiliser l'outil",
-    "cta_primary": "Calculer l'Empreinte",
-    "cta_secondary": "Consulter la FAQ",
-    "inputs": [
-      {
-        "id": "amount",
-        "label": "Montant de base",
-        "type": "number",
-        "placeholder": "7500",
-        "weight": 1.0
-      },
-      {
-        "id": "duration",
-        "label": "Durée estimée",
-        "type": "number",
-        "placeholder": "12",
-        "weight": 0.42
-      },
-      {
-        "id": "plan",
-        "label": "Niveau de service",
-        "type": "select",
-        "options": [
-          {
-            "label": "Essentiel",
-            "value": 1.0
-          },
-          {
-            "label": "Performance",
-            "value": 1.18
-          },
-          {
-            "label": "Premium",
-            "value": 1.34
-          }
-        ],
-        "weight": 1.0
-      }
+    "summary": "Calculez l",
+    "notes": "Growth module republish of an updated local artifact.",
+    "archetype": "calculator",
+    "language": "fr",
+    "country": "FR",
+    "market": "Growth republish",
+    "characteristics": [
+      "imported static site",
+      "ready file deploy",
+      "calculator"
     ],
-    "hero_metrics": [
-      {
-        "value": "Campaign Slab",
-        "label": "Cadence"
-      },
-      {
-        "value": "3",
-        "label": "Entrées"
-      },
-      {
-        "value": "Résultat recommandé",
-        "label": "Sortie"
-      }
-    ],
-    "trust_labels": [
-      "Campaign Slab",
-      "Calculer l'Empreinte",
-      "Résultat recommandé",
-      "Utilitaire immédiat",
-      "Structure SEO claire"
-    ],
-    "result_label": "Résultat recommandé",
-    "result_unit": "EUR",
-    "runtime_mode": "generic_calculator",
-    "page_variant": "showcase",
-    "faq_topic": "Simulateur d'Impact Écologique des Itinéraires de Voyage",
-    "faq_entries": [
-      {
-        "question": "Pourquoi utiliser cet outil pour Simulateur d'Impact Écologique des Itinéraires de Voyage ?",
-        "answer": "Il aide à cadrer le besoin rapidement et à orienter vers une prochaine action claire sur le marché France."
-      },
-      {
-        "question": "Le résultat est-il immédiat ?",
-        "answer": "Oui. L'interface est pensée pour une réponse rapide, lisible et exploitable dès la première interaction."
-      },
-      {
-        "question": "Cette page est-elle adaptée au SEO ?",
-        "answer": "Oui. La structure mélange utilité, clarté éditoriale et signaux de confiance sans surcharger l'expérience."
-      }
-    ],
-    "seo_paragraphs": [
-      "Cette page capte une intention forte autour de Simulateur d'Impact Écologique des Itinéraires de Voyage et la transforme en action utile pour un public situé sur France.",
-      "Le format hero-first accélère la compréhension, réduit les frictions et améliore la lisibilité sur mobile comme sur desktop.",
-      "Le socle reste volontairement simple pour faciliter les tests, la QA continue et les variations SEO."
-    ],
-    "document_html": "<!DOCTYPE html>\n<html lang=\"fr\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Simulateur d&#x27;Impact Écologique des Itinéraires de Voyage | Votre Empreinte Carbone de Voyage, Simplifiée.</title>\n    <meta name=\"description\" content=\"Calculez l\">\n    <style>\n        :root {\n            --color-primary: #4CAF50;\n            --color-secondary: #8BC34A;\n            --color-text: #333;\n            --color-background: #F0F4C3;\n            --color-surface: #FFFFFF;\n            --color-border: #E0E0E0;\n            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n            --spacing-unit: 1rem;\n        }\n\n        body {\n            font-family: var(--font-family);\n            line-height: 1.6;\n            margin: 0;\n            padding: 0;\n            background-color: var(--color-background);\n            color: var(--color-text);\n            display: flex;\n            flex-direction: column;\n            min-height: 100vh;\n        }\n\n        header {\n            background-color: var(--color-primary);\n            color: white;\n            padding: calc(2 * var(--spacing-unit)) 0;\n            text-align: center;\n        }\n\n        header h1 {\n            margin: 0;\n            font-size: 2.5rem;\n        }\n\n        .container {\n            max-width: 960px;\n            margin: 0 auto;\n            padding: var(--spacing-unit);\n            flex-grow: 1;\n        }\n\n        .hero {\n            text-align: center;\n            padding: calc(3 * var(--spacing-unit)) 0;\n            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);\n            color: white;\n            border-radius: 8px;\n            margin-bottom: calc(2 * var(--spacing-unit));\n            box-shadow: 0 4px 15px rgba(0,0,0,0.1);\n        }\n\n        .hero h2 {\n            font-size: 2rem;\n            margin-bottom: var(--spacing-unit);\n        }\n\n        .hero p {\n            font-size: 1.1rem;\n            max-width: 700px;\n            margin: 0 auto;\n        }\n\n        .tool-section {\n            background-color: var(--color-surface);\n            padding: calc(2 * var(--spacing-unit));\n            border-radius: 8px;\n            box-shadow: 0 2px 10px rgba(0,0,0,0.05);\n            margin-bottom: calc(2 * var(--spacing-unit));\n        }\n\n        .tool-section h3 {\n            color: var(--color-primary);\n            text-align: center;\n            margin-bottom: calc(2 * var(--spacing-unit));\n            font-size: 1.8rem;\n        }\n\n        #tool-form {\n            display: grid;\n            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));\n            gap: calc(1.5 * var(--spacing-unit));\n            padding-bottom: calc(2 * var(--spacing-unit));\n            border-bottom: 1px solid var(--color-border);\n            margin-bottom: calc(2 * var(--spacing-unit));\n        }\n\n        .form-group {\n            display: flex;\n            flex-direction: column;\n        }\n\n        label {\n            margin-bottom: 0.5rem;\n            font-weight: bold;\n            color: var(--color-text);\n        }\n\n        input[type=\"number\"],\n        select {\n            padding: 0.8rem;\n            border: 1px solid var(--color-border);\n            border-radius: 4px;\n            font-size: 1rem;\n            background-color: #f9f9f9;\n        }\n\n        input[type=\"number\"]:focus,\n        select:focus {\n            outline: none;\n            border-color: var(--color-primary);\n            box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);\n        }\n\n        #tool-submit {\n            grid-column: 1 / -1;\n            padding: 1rem 2rem;\n            background-color: var(--color-primary);\n            color: white;\n            border: none;\n            border-radius: 50px;\n            font-size: 1.1rem;\n            cursor: pointer;\n            transition: background-color 0.3s ease, transform 0.2s ease;\n            justify-self: center;\n            margin-top: var(--spacing-unit);\n            box-shadow: 0 4px 8px rgba(0,0,0,0.2);\n        }\n\n        #tool-submit:hover {\n            background-color: #66BB6A;\n            transform: translateY(-2px);\n        }\n\n        #tool-result {\n            padding: calc(1.5 * var(--spacing-unit));\n            background-color: #e8f5e9; /* Light green for results */\n            border-radius: 8px;\n            border: 1px solid var(--color-secondary);\n            text-align: center;\n            font-size: 1.2rem;\n            color: var(--color-text);\n            min-height: 100px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            flex-direction: column;\n            gap: 10px;\n        }\n        #tool-result p {\n            margin: 0;\n        }\n        #tool-result strong {\n            color: var(--color-primary);\n            font-size: 1.4rem;\n        }\n\n        .cta-section {\n            text-align: center;\n            padding: calc(3 * var(--spacing-unit)) 0;\n            margin-top: calc(3 * var(--spacing-unit));\n            background-color: var(--color-surface);\n            border-radius: 8px;\n            box-shadow: 0 2px 10px rgba(0,0,0,0.05);\n        }\n\n        .cta-section h3 {\n            color: var(--color-primary);\n            font-size: 1.8rem;\n            margin-bottom: var(--spacing-unit);\n        }\n\n        .cta-section p {\n            font-size: 1.1rem;\n            margin-bottom: calc(2 * var(--spacing-unit));\n        }\n\n        .cta-button {\n            display: inline-block;\n            background-color: var(--color-secondary);\n            color: white;\n            padding: 1rem 2.5rem;\n            border-radius: 50px;\n            text-decoration: none;\n            font-weight: bold;\n            font-size: 1.1rem;\n            transition: background-color 0.3s ease, transform 0.2s ease;\n            box-shadow: 0 4px 8px rgba(0,0,0,0.2);\n        }\n\n        .cta-button:hover {\n            background-color: #9CCC65;\n            transform: translateY(-2px);\n        }\n\n        .seo-section {\n            background-color: #e0e0e0;\n            color: #555;\n            padding: calc(2 * var(--spacing-unit));\n            margin-top: calc(3 * var(--spacing-unit));\n            border-top: 1px solid var(--color-border);\n            text-align: center;\n            font-size: 0.9rem;\n        }\n\n        .seo-section h4 {\n            font-size: 1.2rem;\n            margin-bottom: var(--spacing-unit);\n            color: var(--color-primary);\n        }\n\n        .seo-section p {\n            margin-bottom: 0.8rem;\n            line-height: 1.5;\n        }\n\n        .seo-section a {\n            color: var(--color-primary);\n            text-decoration: none;\n        }\n\n        .seo-section a:hover {\n            text-decoration: underline;\n        }\n\n        footer {\n            background-color: var(--color-primary);\n            color: white;\n            text-align: center;\n            padding: var(--spacing-unit) 0;\n            margin-top: calc(2 * var(--spacing-unit));\n        }\n    </style>\n    <meta name=\"robots\" content=\"index, follow\">\n    <link rel=\"canonical\" href=\"https://simulateur-d-impact-ecologique-des-itineraires-ec0b7839.onrender.com\">\n    <meta property=\"og:title\" content=\"Simulateur d&#x27;Impact Écologique des Itinéraires de Voyage\">\n    <meta property=\"og:description\" content=\"Calculez l\">\n    <meta property=\"og:url\" content=\"https://simulateur-d-impact-ecologique-des-itineraires-ec0b7839.onrender.com\">\n    <meta property=\"og:type\" content=\"website\">\n    <script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"WebApplication\", \"name\": \"Simulateur d'Impact Écologique des Itinéraires de Voyage\", \"description\": \"Calculez l\", \"url\": \"https://simulateur-d-impact-ecologique-des-itineraires-ec0b7839.onrender.com\", \"applicationCategory\": \"UtilityApplication\", \"operatingSystem\": \"Web Browser\"}</script>\n</head>\n<body data-site-slug=\"simulateur-d-impact-ecologique-des-itineraires-ec0b7839\" data-runtime-mode=\"generic_calculator\">\n    <header>\n        <div class=\"container\">\n            <h1>Voyagez Malin, Voyagez Vert.</h1>\n        </div>\n    </header>\n\n    <div class=\"container\">\n        <section class=\"hero\">\n            <h2>Votre Empreinte Carbone de Voyage, Simplifiée.</h2>\n            <p>Découvrez l'impact écologique de vos déplacements en avion, train ou voiture. Comparez et choisissez l'option la plus responsable pour la planète.</p>\n        </section>\n\n        <section class=\"tool-section\">\n            <h3>Calculez Votre Impact</h3>\n            <form id=\"tool-form\">\n                <div class=\"form-group\">\n                    <label for=\"distance\">Distance parcourue (km) :</label>\n                    <input type=\"number\" id=\"distance\" name=\"distance\" min=\"1\" value=\"500\" required>\n                </div>\n\n                <div class=\"form-group\">\n                    <label for=\"mode\">Mode de transport :</label>\n                    <select id=\"mode\" name=\"mode\" required>\n                        <option value=\"avion\">Avion</option>\n                        <option value=\"train\">Train</option>\n                        <option value=\"voiture_essence\">Voiture Essence</option>\n                        <option value=\"voiture_electrique\">Voiture Électrique</option>\n                    </select>\n                </div>\n\n                <div class=\"form-group\">\n                    <label for=\"passengers\">Nombre de passagers (pour voiture) :</label>\n                    <input type=\"number\" id=\"passengers\" name=\"passengers\" min=\"1\" value=\"1\" required>\n                </div>\n\n                <button type=\"submit\" id=\"tool-submit\">Calculer l'Empreinte</button>\n            </form>\n\n            <div id=\"tool-result\">\n                <p id=\"result-detail\">Vos résultats apparaîtront ici. Essayez une simulation !</p>\n            </div>\n        </section>\n\n        <section class=\"cta-section\">\n            <h3>Prêt à faire la différence ?</h3>\n            <p>Chaque geste compte. Explorez des alternatives et engagez-vous pour un tourisme plus durable.</p>\n            <a href=\"#\" class=\"cta-button\" data-affiliate-slot=\"eco_guide\">Découvrir les Voyages Écologiques</a>\n        </section>\n    </div>\n\n    <section class=\"seo-section\">\n        <div class=\"container\">\n            <h4>Optimisez vos voyages avec notre simulateur d'empreinte carbone</h4>\n            <p>Vous cherchez à réduire votre <a href=\"#\" aria-label=\"Empreinte carbone voyage\">empreinte carbone de voyage</a> ? Notre calculateur vous aide à comparer l'impact écologique de différents modes de transport : <a href=\"#\" aria-label=\"Comparatif avion train voiture CO2\">avion, train, voiture</a>. Que vous planifiiez des vacances en <a href=\"#\" aria-label=\"Voyage durable France\">France</a> ou à l'étranger, découvrez comment vos choix influencent l'environnement. Obtenez une estimation précise des <a href=\"#\" aria-label=\"Émissions CO2 transport\">émissions de CO2</a> par kilomètre et par passager. Un outil essentiel pour un <a href=\"#\" aria-label=\"Tourisme responsable\">tourisme responsable</a> et des <a href=\"#\" aria-label=\"Déplacements écologiques\">déplacements plus écologiques</a>.</p>\n            <p>Notre <a href=\"#\" aria-label=\"Calculateur CO2 voyage\">calculateur CO2 voyage</a> est conçu pour sensibiliser et offrir des solutions concrètes pour un <a href=\"#\" aria-label=\"Voyage bas carbone\">voyage bas carbone</a>. Explorez les avantages du <a href=\"#\" aria-label=\"Impact environnemental train\">train</a> face à l'<a href=\"#\" aria-label=\"Impact environnemental avion\">avion</a> et optimisez vos trajets en voiture. Faites le choix d'un <a href=\"#\" aria-label=\"Itinéraire écologique\">itinéraire écologique</a> et participez à la construction d'un futur plus vert.</p>\n        </div>\n    </section>\n\n    <footer>\n        <div class=\"container\">\n            <p>&copy; 2023 Solutions Éco-Voyage. Tous droits réservés.</p>\n        </div>\n    </footer>\n\n    <script>\n        document.getElementById('tool-form').addEventListener('submit', function(event) {\n            event.preventDefault();\n\n            const distance = parseFloat(document.getElementById('distance').value);\n            const mode = document.getElementById('mode').value;\n            const passengers = parseFloat(document.getElementById('passengers').value);\n            let carbonFootprint = 0; // en grammes de CO2\n\n            // Coefficients d'émission en g CO2 / km\n            // Sources simplifiées pour l'exemple, peuvent être affinées\n            const coefficients = {\n                avion: 200, // Long-courrier, peut varier fortement\n                train: 6,   // TGV, électrique\n                voiture_essence: 170, // Moyenne européenne, divisé par passagers\n                voiture_electrique: 50 // Production d'électricité et fabrication, divisé par passagers\n            };\n\n            if (isNaN(distance) || distance <= 0) {\n                document.getElementById('tool-result').innerHTML = \"<p style='color: red;'>Veuillez entrer une distance valide.</p>\";\n                return;\n            }\n\n            switch (mode) {\n                case 'avion':\n                    carbonFootprint = distance * coefficients.avion;\n                    break;\n                case 'train':\n                    carbonFootprint = distance * coefficients.train;\n                    break;\n                case 'voiture_essence':\n                    if (isNaN(passengers) || passengers <= 0) {\n                        document.getElementById('tool-result').innerHTML = \"<p style='color: red;'>Veuillez entrer un nombre de passagers valide pour la voiture.</p>\";\n                        return;\n                    }\n                    carbonFootprint = (distance * coefficients.voiture_essence) / passengers;\n                    break;\n                case 'voiture_electrique':\n                    if (isNaN(passengers) || passengers <= 0) {\n                        document.getElementById('tool-result').innerHTML = \"<p style='color: red;'>Veuillez entrer un nombre de passagers valide pour la voiture.</p>\";\n                        return;\n                    }\n                    carbonFootprint = (distance * coefficients.voiture_electrique) / passengers;\n                    break;\n                default:\n                    document.getElementById('tool-result').innerHTML = \"<p style='color: red;'>Mode de transport non reconnu.</p>\";\n                    return;\n            }\n\n            const carbonKg = (carbonFootprint / 1000).toFixed(2); // Convertir en kg\n\n            let message = \"\";\n            if (carbonKg < 10) {\n                message = \"Excellent ! Votre choix est très respectueux de l'environnement.\";\n            } else if (carbonKg < 50) {\n                message = \"Bonne initiative ! Il y a toujours des marges d'amélioration.\";\n            } else if (carbonKg < 200) {\n                message = \"Attention, votre empreinte est significative. Des alternatives existent.\";\n            } else {\n                message = \"Votre empreinte est élevée. Considérez sérieusement des modes de transport plus durables.\";\n            }\n\n\n            document.getElementById('tool-result').innerHTML =\n                `<p>Votre empreinte carbone estimée pour ce trajet est de :</p>\n                 <p><strong>${carbonKg} kg de CO2</strong></p>\n                 <p>${message}</p>`;\n        });\n    </script>\n<div id=\"qa-smoke-result\" hidden></div>\n<script id=\"farmbuilder-affiliate-helper\">\n(function () {\n  window.__UTILITY_AFFILIATE_MAP = window.__UTILITY_AFFILIATE_MAP || {};\n  document.addEventListener(\"click\", function (event) {\n    const target = event.target.closest(\"[data-affiliate-slot]\");\n    if (!target) return;\n    const slot = target.getAttribute(\"data-affiliate-slot\");\n    const href = window.__UTILITY_AFFILIATE_MAP[slot];\n    if (!href) return;\n    if (target.tagName && target.tagName.toLowerCase() === \"a\") {\n      target.setAttribute(\"href\", href);\n      target.setAttribute(\"rel\", \"nofollow sponsored noopener noreferrer\");\n      return;\n    }\n    event.preventDefault();\n    window.open(href, \"_blank\", \"noopener\");\n  }, true);\n})();\n</script>\n<script id=\"farmbuilder-functional-qa\">\n(function () {\n  function marker() {\n    let node = document.getElementById(\"qa-smoke-result\");\n    if (node) return node;\n    node = document.createElement(\"div\");\n    node.id = \"qa-smoke-result\";\n    node.hidden = true;\n    document.body.appendChild(node);\n    return node;\n  }\n\n  let qaFinished = false;\n  let qaWatchdog = null;\n\n  function normalize(text) {\n    return String(text || \"\").replace(/\\s+/g, \" \").trim();\n  }\n\n  function findForm() {\n    return document.getElementById(\"tool-form\") || document.querySelector(\"form\");\n  }\n\n  function findResult() {\n    return (\n      document.getElementById(\"tool-result\") ||\n      document.querySelector(\"[data-result]\") ||\n      document.querySelector(\".tool-result, .result-card, .result, .results, .output, .preview, .diagnostic, .analysis\")\n    );\n  }\n\n  function primaryAction(form) {\n    if (!form) return null;\n    return (\n      document.getElementById(\"tool-submit\") ||\n      form.querySelector(\"#tool-submit\") ||\n      form.querySelector(\"[data-primary-action]\") ||\n      form.querySelector(\"button[type=submit]\") ||\n      form.querySelector(\"button\") ||\n      form.querySelector(\"input[type=submit]\")\n    );\n  }\n\n  function resultSignature(node) {\n    if (!node) return \"\";\n    const text = normalize(node.textContent);\n    const html = normalize(node.innerHTML).slice(0, 600);\n    return `${text}||${html}`;\n  }\n\n  function resultHeadline(node) {\n    if (!node) return \"\";\n    const heading = node.querySelector(\"h1, h2, h3, strong, b\");\n    return normalize(heading ? heading.textContent : \"\");\n  }\n\n  function sampleText(field) {\n    const key = `${field.id || \"\"} ${field.name || \"\"} ${field.placeholder || \"\"}`.toLowerCase();\n    if (/email/.test(key)) return \"bonjour@example.com\";\n    if (/url|site|website|lien/.test(key)) return \"https://example.com/offre-solaire\";\n    if (/phone|tel|mobile/.test(key)) return \"0612345678\";\n    if (/ville|city|localisation|location|region|departement|postal/.test(key)) return \"Paris\";\n    if (/orientation/.test(key)) return \"sud\";\n    if (/keyword|theme|topic|sujet|subject/.test(key)) return \"energie solaire domestique\";\n    if (/titre|title/.test(key)) return \"Simulateur solaire maison\";\n    if (/nom|name|project/.test(key)) return \"Projet Horizon\";\n    if (/description|notes|content|message/.test(key)) return \"Maison individuelle exposee sud avec toiture exploitable.\";\n    return field.placeholder || \"France\";\n  }\n\n  function sampleNumber(field) {\n    const key = `${field.id || \"\"} ${field.name || \"\"}`.toLowerCase();\n    if (/inclinaison|angle|slope/.test(key)) return \"30\";\n    if (/surface|size|m2|sqm/.test(key)) return \"28\";\n    if (/annee|year/.test(key)) return \"2024\";\n    if (/prix|price|budget|cost|amount|montant/.test(key)) return \"12000\";\n    const min = Number(field.min || \"\");\n    const max = Number(field.max || \"\");\n    if (Number.isFinite(min) && Number.isFinite(max) && max >= min) {\n      return String(Math.min(max, Math.max(min, min + Math.round((max - min) * 0.35))));\n    }\n    if (Number.isFinite(min)) return String(Math.max(min, 12));\n    if (Number.isFinite(max)) return String(Math.min(max, 12));\n    return field.value || \"12\";\n  }\n\n  function applySample(field) {\n    const tag = (field.tagName || \"\").toLowerCase();\n    const type = (field.type || \"\").toLowerCase();\n    if (field.disabled) return;\n    if (type === \"hidden\" || type === \"submit\" || type === \"button\" || type === \"reset\" || type === \"image\" || type === \"file\") {\n      return;\n    }\n    if (tag === \"select\") {\n      const option = Array.from(field.options || []).find((item) => item.value && !item.disabled) || field.options[0];\n      if (option) field.value = option.value;\n      return;\n    }\n    if (type === \"checkbox\") {\n      field.checked = true;\n      return;\n    }\n    if (type === \"radio\") {\n      field.checked = true;\n      return;\n    }\n    if (type === \"date\") {\n      field.value = \"2026-03-01\";\n      return;\n    }\n    if (type === \"email\") {\n      field.value = \"bonjour@example.com\";\n      return;\n    }\n    if (type === \"url\") {\n      field.value = \"https://example.com/offre-solaire\";\n      return;\n    }\n    if (type === \"tel\") {\n      field.value = \"0612345678\";\n      return;\n    }\n    if (type === \"color\") {\n      field.value = \"#2f855a\";\n      return;\n    }\n    if (type === \"number\" || type === \"range\") {\n      field.value = sampleNumber(field);\n      return;\n    }\n    field.value = sampleText(field);\n  }\n\n  function stamp(status, detail, headline, primary) {\n    if (qaFinished) return;\n    qaFinished = true;\n    if (qaWatchdog) {\n      window.clearTimeout(qaWatchdog);\n      qaWatchdog = null;\n    }\n    const node = marker();\n    node.dataset.status = status;\n    node.dataset.mode = \"native-form\";\n    node.dataset.detail = detail || \"\";\n    node.dataset.headline = headline || \"\";\n    node.dataset.primary = primary || \"\";\n    node.dataset.viewport = window.innerWidth <= 640 ? \"mobile\" : \"desktop\";\n    window.setTimeout(function () {\n      try {\n        window.stop();\n      } catch (_error) {}\n    }, 0);\n  }\n\n  function installModalGuards() {\n    const noop = function () {};\n    const approve = function () { return true; };\n    const empty = function () { return \"\"; };\n    try { window.alert = noop; } catch (_error) {}\n    try { window.confirm = approve; } catch (_error) {}\n    try { window.prompt = empty; } catch (_error) {}\n  }\n\n  function triggerAction(form, action) {\n    try {\n      if (typeof form.requestSubmit === \"function\") {\n        form.requestSubmit(action || undefined);\n        return;\n      }\n    } catch (_error) {}\n    if (action && typeof action.click === \"function\") {\n      action.click();\n      return;\n    }\n    form.dispatchEvent(new Event(\"submit\", { bubbles: true, cancelable: true }));\n  }\n\n  function inspectResult(before, attemptsLeft) {\n    const result = findResult();\n    if (!result) {\n      stamp(\"fail\", \"La zone de resultat est introuvable.\", \"\");\n      return;\n    }\n    const after = resultSignature(result);\n    const text = normalize(result.textContent);\n    if (after && after !== before && text.length >= 24) {\n      const primary = result.querySelector(\"a[href], button[data-href], [data-primary-url]\") || document.querySelector(\"#tool-result a[href]\");\n      stamp(\"pass\", \"Le formulaire natif a mis a jour la zone de resultat.\", resultHeadline(result), primary ? (primary.getAttribute(\"href\") || primary.getAttribute(\"data-primary-url\") || \"\") : \"\");\n      return;\n    }\n    if (attemptsLeft > 0) {\n      window.setTimeout(function () {\n        inspectResult(before, attemptsLeft - 1);\n      }, 250);\n      return;\n    }\n    stamp(\"fail\", \"La zone de resultat n'a pas renvoye de contenu exploitable.\", resultHeadline(result));\n  }\n\n  function runSmoke() {\n    const params = new URLSearchParams(window.location.search);\n    if (params.get(\"__qa\") !== \"functional\") return;\n    qaWatchdog = window.setTimeout(function () {\n      stamp(\"fail\", \"QA smoke timed out before the page reported a usable result.\", \"\");\n    }, 7000);\n    const form = findForm();\n    if (!form) {\n      stamp(\"fail\", \"Le formulaire principal est introuvable.\", \"\");\n      return;\n    }\n    const result = findResult();\n    const before = resultSignature(result);\n    installModalGuards();\n    try {\n      form.querySelectorAll(\"input, select, textarea\").forEach(applySample);\n    } catch (error) {\n      stamp(\"fail\", error && error.message ? `QA smoke sample failed: ${error.message}` : \"QA smoke sample failed before submit.\", \"\");\n      return;\n    }\n    const action = primaryAction(form);\n    try {\n      triggerAction(form, action);\n    } catch (error) {\n      stamp(\"fail\", error && error.message ? `QA smoke submit failed: ${error.message}` : \"QA smoke submit failed.\", \"\");\n      return;\n    }\n    inspectResult(before, 10);\n  }\n\n  window.addEventListener(\"error\", function (event) {\n    const message = event && event.message ? event.message : \"JavaScript runtime error during QA smoke.\";\n    stamp(\"fail\", `QA smoke JS error: ${message}`, \"\");\n  }, { once: true });\n\n  window.addEventListener(\"unhandledrejection\", function (event) {\n    const reason = event && event.reason;\n    const detail = typeof reason === \"string\"\n      ? reason\n      : reason && reason.message\n        ? reason.message\n        : \"Unhandled promise rejection during QA smoke.\";\n    stamp(\"fail\", `QA smoke rejection: ${detail}`, \"\");\n  }, { once: true });\n\n  if (document.readyState === \"loading\") {\n    document.addEventListener(\"DOMContentLoaded\", function () {\n      window.setTimeout(runSmoke, 60);\n    }, { once: true });\n  } else {\n    window.setTimeout(runSmoke, 60);\n  }\n})();\n</script>\n</body>\n</html>",
-    "generation_mode": "direct_html"
-  }
+    "suggested_slug": "simulateur-d-impact-ecologique-des-itineraires-ec0b7839"
+  },
+  "source_path": "/var/lib/utility-site-studio/data/growth-republish/growth-1778154698063/simulateur-d-impact-ecologique-des-itineraires-ec0b7839",
+  "deploy_root": "/var/lib/utility-site-studio/data/growth-republish/growth-1778154698063/simulateur-d-impact-ecologique-des-itineraires-ec0b7839"
 }
